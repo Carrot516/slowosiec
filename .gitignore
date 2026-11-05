@@ -1,0 +1,49 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Python
+.venv/
+__pycache__/
+
+# Large ML models
+/models/
+
+# Local experimental data
+/data/
+
+/scripts/excluded_words.txt
+
+# Local development and legacy scripts
+/scripts/build_graph_fasttext.py
+/scripts/build_graph_filtered.py
+/scripts/clean_words.py
+/scripts/audiut_words.py
+/scripts/check_vocab.py
+/scripts/inspect_graphs.py
+/scripts/test_embeddings.py
+/scripts/test_morfeusz.py
+
+# Generated embeddings (temporary research data)
+public/data/*.npy

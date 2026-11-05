@@ -1,0 +1,166 @@
+
+.word-browser {
+  margin-top: 24px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+}
+
+.word-browser-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.word-browser-header h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #172b4d;
+}
+
+.word-browser-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.word-browser-header button,
+.word-browser-more {
+  padding: 10px 14px;
+  border: 1px solid #b2c4d8;
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #203653;
+  cursor: pointer;
+  font: inherit;
+}
+
+.word-browser-content {
+  margin-top: 20px;
+}
+
+.word-browser-content input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #a3b5ca;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.word-browser-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.word-browser-filters button {
+  padding: 9px 12px;
+  border-radius: 9px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  color: #203653;
+  font: inherit;
+  cursor: pointer;
+}
+
+.word-browser-filters button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+.word-browser-count {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.word-browser-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  max-height: 360px;
+  overflow-y: auto;
+  padding: 4px;
+}
+
+.word-browser-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  background: #f8fafc;
+  color: #64748b;
+  font: inherit;
+  text-align: left;
+}
+
+.word-browser-item span:first-child {
+  overflow-wrap: anywhere;
+}
+
+.word-browser-item.available {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.word-browser-item.available:hover {
+  background: #dbeafe;
+}
+
+.word-browser-item:disabled {
+  cursor: not-allowed;
+}
+
+.word-browser-status {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.word-browser-item.available .word-browser-status {
+  color: #168361;
+}
+
+.word-browser-empty {
+  grid-column: 1 / -1;
+  padding: 18px;
+  text-align: center;
+  color: #64748b;
+}
+
+.word-browser-more {
+  display: block;
+  margin: 14px auto 0;
+}
+
+.word-browser-help {
+  margin: 12px 0 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+@media (max-width: 600px) {
+  .word-browser {
+    padding: 14px;
+  }
+
+  .word-browser-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .word-browser-list {
+    grid-template-columns: 1fr;
+    max-height: 300px;
+  }
+}

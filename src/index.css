@@ -1,0 +1,25 @@
+
+:root {
+  font-family: system-ui, sans-serif;
+  color: #172b4d;
+  background: #f8fafc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  background: white;
+  color: #172b4d;
+  border: 1px solid #a4b8d4;
+}

@@ -1,0 +1,404 @@
+
+/* =========================================
+   1. GŁÓWNY UKŁAD APLIKACJI
+========================================= */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.game {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, sans-serif;
+}
+
+/* =========================================
+   2. NAGŁÓWEK
+========================================= */
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.game-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+}
+
+.game-header p {
+  margin: 0 0 16px;
+}
+
+.game-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.game-stats {
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #e9eff7;
+  white-space: nowrap;
+}
+
+.about-toggle {
+  padding: 12px 16px;
+  border: 1px solid #b2c4d8;
+  border-radius: 10px;
+  background: #fff;
+  color: #203653;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.about-toggle:hover {
+  background: #eff6ff;
+}
+
+/* =========================================
+   3. PLANSZA REACT FLOW
+========================================= */
+
+.graph-canvas {
+  width: 100%;
+  height: min(60vh, 580px);
+  min-height: 390px;
+  overflow: hidden;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.react-flow__node-default.game-node {
+  width: auto;
+  min-width: 110px;
+  padding: 12px 16px;
+  border: 2px solid #7299d8;
+  border-radius: 12px;
+  background: #e9effb;
+  color: #203653;
+  font-weight: 600;
+  box-shadow: 0 3px 9px #00000012;
+}
+
+.react-flow__node-default.game-node--start {
+  background: #dcfce7;
+  border-color: #15986b;
+  color: #126747;
+}
+
+.react-flow__node-default.game-node--target {
+  background: #fef0cf;
+  border-color: #d3912c;
+  color: #805316;
+}
+
+.game-caption {
+  margin: 8px 0 18px;
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+/* =========================================
+   4. WPISYWANIE SŁÓW
+========================================= */
+
+.word-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.word-form input {
+  width: min(100%, 460px);
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #a3b5ca;
+  border-radius: 10px;
+  font: inherit;
+}
+
+.word-form button {
+  padding: 12px 16px;
+  border: 1px solid #2563eb;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.word-form button:hover {
+  background: #1d4ed8;
+}
+
+.word-form button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.game-message {
+  min-height: 22px;
+  color: #b42318;
+  text-align: center;
+}
+
+.win-message {
+  color: #168361;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* =========================================
+   5. STEROWANIE ROZGRYWKĄ
+========================================= */
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.game-control-group {
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #f8fafc;
+}
+
+.game-control-group h3 {
+  margin: 0 0 14px;
+  color: #64748b;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.game-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-actions label {
+  color: #475569;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.game-actions button,
+.game-actions select {
+  padding: 12px 16px;
+  border: 1px solid #b2c4d8;
+  border-radius: 10px;
+  background: white;
+  color: #203653;
+  font: inherit;
+}
+
+.game-actions button {
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.game-actions button:hover:not(:disabled) {
+  background: #eff6ff;
+}
+
+.game-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.game-actions .primary-action {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+  font-weight: 600;
+}
+
+.game-actions .primary-action:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* =========================================
+   6. WŁASNA ROZGRYWKA
+========================================= */
+
+.custom-game {
+  margin-top: 24px;
+  padding: 20px;
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+}
+
+.custom-game h2 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+}
+
+.custom-game p {
+  color: #475569;
+}
+
+.custom-game-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.custom-game-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.custom-game-fields input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #a3b5ca;
+  border-radius: 10px;
+  background: white;
+  color: #172b4d;
+  font: inherit;
+}
+
+.custom-game-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.custom-game-actions button {
+  padding: 10px 14px;
+  border: 1px solid #b2c4d8;
+  border-radius: 10px;
+  background: white;
+  color: #203653;
+  font: inherit;
+  cursor: pointer;
+}
+
+.custom-game-actions button.selected,
+.custom-game-actions button.custom-game-start {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+/* =========================================
+   7. STOPKA
+========================================= */
+
+.game-footer {
+  margin-top: 32px;
+  padding: 20px 10px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.game-footer p {
+  margin: 4px 0;
+}
+
+.game-footer a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.game-footer a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   8. DOSTĘPNOŚĆ
+========================================= */
+
+.game button:focus-visible,
+.game input:focus-visible,
+.game select:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+/* =========================================
+   9. WIDOK MOBILNY
+========================================= */
+
+@media (max-width: 600px) {
+  .game {
+    padding: 12px;
+  }
+
+  .game-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .game-header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .graph-canvas {
+    height: 52vh;
+    min-height: 350px;
+  }
+
+  .word-form {
+    flex-direction: column;
+  }
+
+  .word-form input,
+  .word-form button {
+    width: 100%;
+  }
+
+  .game-control-group {
+    padding: 14px;
+  }
+
+  .game-control-group .game-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game-control-group .game-actions button,
+  .game-control-group .game-actions select {
+    width: 100%;
+  }
+
+  .custom-game {
+    padding: 14px;
+  }
+
+  .custom-game-fields {
+    grid-template-columns: 1fr;
+  }
+}
