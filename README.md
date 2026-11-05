@@ -23,9 +23,9 @@ The vocabulary is derived from Polish word-frequency data and filtered using mor
 For two words \(u\) and \(v\), their similarity is measured using cosine similarity:
 
 $$
-\operatorname{sim}(u,v) =
+\mathrm{sim}(u,v) =
 \frac{\mathbf{e}_u \cdot \mathbf{e}_v}
-{\lVert\mathbf{e}_u\rVert\,\lVert\mathbf{e}_v\rVert}.
+{\lVert \mathbf{e}_u \rVert \, \lVert \mathbf{e}_v \rVert}
 $$
 
 Words with similar distributional contexts tend to have nearby vectors, although vector similarity does not always match human intuition.
